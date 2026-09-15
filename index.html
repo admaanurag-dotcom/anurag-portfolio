@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- SEO & Social Meta Tags -->
+  <title>Anurag Reddy Adma | Full Stack Developer & Software Craftsman</title>
+  <meta name="description"
+    content="Portfolio of Anurag Reddy Adma - Full Stack Developer specializing in building modern, responsive, and high-performance web applications.">
+  <meta name="keywords"
+    content="Anurag Reddy Adma, Full Stack Developer, Web Developer, Software Engineer, Portfolio, HTML, CSS, JavaScript">
+  <meta name="author" content="Anurag Reddy Adma">
+
+  <!-- Google Fonts Preconnect & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="site-header" id="header">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Home">
+        <span class="logo-bracket">&lt;</span><span class="logo-name">Anurag</span><span
+          class="logo-accent">.dev</span><span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+          <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+          <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions: Theme Switcher & Mobile Menu Button -->
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light and dark mode" title="Toggle theme">
+          <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <ul class="mobile-nav-list">
+        <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#education" class="mobile-nav-link">Education</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-nav-cta">
+        <a href="#contact" class="btn btn-primary btn-block">Let's Talk</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main>
+
+    <!-- ==================== HERO SECTION (PROFILE TEMPLATE STYLE) ==================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-glow"></div>
+      <div class="container">
+
+        <!-- Hostinger-Inspired Executive Profile Showcase Card -->
+        <div class="profile-template-card">
+
+          <div class="profile-template-main">
+            <!-- Avatar / Photo on Left -->
+            <div class="profile-template-avatar-wrap">
+              <div class="avatar-circle">
+                <img src="profile_avatar.jpg" alt="Anurag Reddy Adma" class="profile-avatar-img">
+              </div>
+              <div class="avatar-status-badge">
+                <span class="status-dot"></span>
+                <span>Open for Roles & Projects</span>
+              </div>
+            </div>
+
+            <!-- Profile Info & Bio on Right -->
+            <div class="profile-template-info">
+              <h1 class="profile-template-name">Anurag Reddy Adma</h1>
+              <p class="profile-template-role">Software Engineer &bull; <span class="hero-dynamic-role"
+                  id="dynamic-role">AI &amp; ML Specialist</span><span class="typing-cursor">|</span></p>
+
+              <p class="profile-template-bio">
+                Innovative Software Engineer and B.Tech CSE (AI & ML) student with proven industry experience as an
+                Automation Intern at <strong>T-Works</strong>. Proven track record building enterprise hackathon
+                management platforms (<strong>LRC 2026</strong>), industrial embedded HMI smart interfaces (<strong>ITC
+                  Automated Roti Maker</strong>), and deep learning computer vision diagnostic models. Skilled across
+                Python, React, JavaScript/TypeScript, Node.js, MySQL, TensorFlow, and DWIN DGUS embedded architectures.
+              </p>
+
+              <div class="profile-template-ctas">
+                <a href="#projects" class="btn btn-primary">
+                  <span>View Projects</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                  <span>Contact Me</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </a>
+                <a href="Anurag_Reddy_Adma_Resume.pdf" class="btn btn-outline" download="Anurag_Reddy_Adma_Resume.pdf"
+                  target="_blank" rel="noopener noreferrer" title="Download Resume">
+                  <span>Resume / CV</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Contact Bar matching the Template -->
+          <div class="profile-template-footer">
+            <a href="tel:+919182236284" class="footer-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              <span>+91 91822 36284</span>
+            </a>
+            <a href="mailto:anuragreddyadma@gmail.com" class="footer-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>anuragreddyadma@gmail.com</span>
+            </a>
+            <a href="https://linkedin.com/in/adma-anurag-reddy" target="_blank" rel="noopener noreferrer"
+              class="footer-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/anuragreddy" target="_blank" rel="noopener noreferrer" class="footer-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <span class="footer-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Hyderabad, India</span>
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT ME SECTION ==================== -->
+    <section class="section about-section" id="about">
+      <div class="container">
+
+        <div class="section-heading text-center">
+          <span class="section-tag">Introduction</span>
+          <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">A glimpse into my background, passions, and approach to software development.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left: Narrative Bio -->
+          <div class="about-content">
+            <h3 class="about-lead">
+              Passionate about turning complex engineering problems into simple, beautiful, and intuitive solutions.
+            </h3>
+            <p class="about-text">
+              Hello! I'm Anurag Reddy Adma, a developer who enjoys crafting things that live on the internet. My
+              interest in web development started with the curiosity to discover how websites function under the hood,
+              which quickly evolved into an obsession with building fast, clean, and interactive digital products.
+            </p>
+            <p class="about-text">
+              I place a strong emphasis on write-once maintainable code, responsive web layouts, accessibility (a11y),
+              and performant web vitals. Whether working on client-facing frontend interfaces or backend services and
+              database architectures, I strive to write code that is clean, robust, and well-tested.
+            </p>
+
+            <!-- Highlights / Value Pillars -->
+            <div class="about-pillars">
+              <div class="pillar-item">
+                <div class="pillar-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="pillar-title">Clean Code</h4>
+                  <p class="pillar-desc">Writing semantic, structured, and easily readable code.</p>
+                </div>
+              </div>
+
+              <div class="pillar-item">
+                <div class="pillar-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="pillar-title">Responsive Design</h4>
+                  <p class="pillar-desc">Pixel-perfect layouts optimized for all device viewports.</p>
+                </div>
+              </div>
+
+              <div class="pillar-item">
+                <div class="pillar-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="pillar-title">Performance</h4>
+                  <p class="pillar-desc">Snappy response times and optimized resource loading.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-cta">
+              <a href="#contact" class="btn btn-primary">Work Together</a>
+              <a href="#experience" class="btn btn-secondary">View Experience</a>
+              <a href="Anurag_Reddy_Adma_Resume.pdf" class="btn btn-outline" download="Anurag_Reddy_Adma_Resume.pdf"
+                target="_blank" rel="noopener noreferrer">
+                <span>Download CV</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Key Numbers / Statistics & Quick Details -->
+          <div class="about-stats-wrapper">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <span class="stat-number" data-count="3">3+</span>
+                <span class="stat-label">Years Learning & Building</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number" data-count="20">20+</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number" data-count="15">15+</span>
+                <span class="stat-label">Technologies Mastered</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number" data-count="100">100%</span>
+                <span class="stat-label">Commitment to Quality</span>
+              </div>
+            </div>
+
+            <!-- Quick Details Card -->
+            <div class="quick-details-card">
+              <h4 class="quick-details-title">Quick Information</h4>
+              <ul class="details-list">
+                <li><span class="detail-name">Name:</span> <span class="detail-val">Anurag Reddy Adma</span></li>
+                <li><span class="detail-name">Email:</span> <span class="detail-val">anuragreddyadma@gmail.com</span>
+                </li>
+                <li><span class="detail-name">Mobile:</span> <span class="detail-val">+91 91822 36284</span></li>
+                <li><span class="detail-name">Location:</span> <span class="detail-val">Hyderabad, India</span></li>
+                <li><span class="detail-name">Availability:</span> <span class="detail-val highlight-green">Open to
+                    Offers</span></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+
+        <div class="section-heading text-center">
+          <span class="section-tag">Capabilities</span>
+          <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">The tools, languages, and technologies I work with to turn visions into reality.
+          </p>
+        </div>
+
+        <div class="skills-categories-grid">
+
+          <!-- Category 1: Frontend -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon icon-cyan">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h3 class="category-title">Frontend Development</h3>
+                <p class="category-desc">User interface, responsive styling & interactions</p>
+              </div>
+            </div>
+
+            <div class="skills-badge-grid">
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>React.js</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>JavaScript (ES6+)</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>HTML5 / Semantic Markup</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>CSS3 / Flexbox & Grid</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>Responsive & Mobile UI</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>DOM Manipulation</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>Web Accessibility (a11y)</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>CSS Animations & UI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Backend & Full Stack -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon icon-purple">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <div>
+                <h3 class="category-title">Backend & Databases</h3>
+                <p class="category-desc">Server architecture, APIs & data management</p>
+              </div>
+            </div>
+
+            <div class="skills-badge-grid">
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>Node.js & Express</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>RESTful APIs Architecture</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>SQL (PostgreSQL / MySQL)</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>NoSQL (MongoDB)</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>DigitalOcean Spaces</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>Authentication & Security</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>CRUD Operations & Logic</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>Cloud File Storage & URLs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Tools & DevOps -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon icon-indigo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="category-title">Tools & Engineering Workflow</h3>
+                <p class="category-desc">Version control, environment & deployment</p>
+              </div>
+            </div>
+
+            <div class="skills-badge-grid">
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>Git & GitHub</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>VS Code & Debugging</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>Antigravity IDE & AI Tools</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>NPM & Package Tooling</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>Command Line / Terminal</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>Chrome DevTools</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>Postman API Testing</span>
+              </div>
+              <div class="skill-pill-item">
+                <span class="skill-pill-dot"></span>
+                <span>Git Branching & Workflow</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE SECTION ==================== -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+
+        <div class="section-heading text-center">
+          <span class="section-tag">Career & Project Journey</span>
+          <h2 class="section-title">Software Development <span class="gradient-text">Experience</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Practical software development, full-stack implementations, cloud integration, and
+            hands-on project engineering.</p>
+        </div>
+
+        <div class="timeline">
+
+          <!-- Experience 1: T-Works -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Automation Engineering Intern</h3>
+                  <span class="timeline-company">T-Works • Hyderabad, India</span>
+                </div>
+                <span class="timeline-date">2026</span>
+              </div>
+              <p class="timeline-desc">
+                Engineered industrial automation interfaces, custom Python developer toolchains, and scalable database
+                architectures for enterprise platforms and smart automated appliances.
+              </p>
+              <ul class="timeline-bullets">
+                <li><strong>Embedded HMI & Industrial Automation:</strong> Engineered industrial Human-Machine Interface
+                  (HMI) smart display solutions for automated appliances (ITC Automated Roti Maker) using DWIN DGUS /
+                  T5L hardware, custom touch calibration, and UART protocols.</li>
+                <li><strong>Custom Automation Toolchain:</strong> Developed custom Python automation toolchains for
+                  video-to-frame extraction, palette quantization, memory mapping, and ICL binary graphic asset
+                  compilation.</li>
+                <li><strong>Hackathon Platform Architecture:</strong> Contributed to the LRC 2026 Hackathon Management
+                  Platform, engineering database schemas (49+ tables), role-based evaluation workflows, and arena
+                  scoring modules.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tag">T-Works</span>
+                <span class="tag">Python</span>
+                <span class="tag">DWIN DGUS</span>
+                <span class="tag">UART Protocols</span>
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">MySQL (49+ Tables)</span>
+                <span class="tag">Embedded Systems</span>
+                <span class="tag">Automation</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 2: CodeOrbit Tech -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Software Intern</h3>
+                  <span class="timeline-company">CodeOrbit Tech</span>
+                </div>
+                <span class="timeline-date">Internship</span>
+              </div>
+              <p class="timeline-desc">
+                Worked as a Web Development Intern at CodeOrbit, gaining hands-on experience in designing, developing,
+                and maintaining modern web applications.
+              </p>
+              <ul class="timeline-bullets">
+                <li>Contributed to frontend and backend development while advancing skills in modern web technologies
+                  and real-world software development practices.</li>
+                <li>Engineered clean, responsive UI components and integrated robust REST APIs.</li>
+                <li>Collaborated in agile software delivery, version control workflows, and debugging production issues.
+                </li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tag">CodeOrbit Tech</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Frontend</span>
+                <span class="tag">Backend</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">Git</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== EDUCATION SECTION ==================== -->
+    <section class="section education-section" id="education">
+      <div class="container">
+
+        <div class="section-heading text-center">
+          <span class="section-tag">Academic Background</span>
+          <h2 class="section-title">Education & <span class="gradient-text">Certifications</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Academic foundations and credentials that power my software engineering
+            discipline.</p>
+        </div>
+
+        <div class="education-grid">
+
+          <!-- Degree Card -->
+          <div class="edu-card">
+            <div class="edu-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+            </div>
+            <div class="edu-header">
+              <span class="edu-year">2023 - 2027</span>
+              <h3 class="edu-degree">Bachelor of Technology in Computer Science</h3>
+              <p class="edu-institution">Malla Reddy College of Engineering</p>
+            </div>
+            <p class="edu-description">
+              Undergraduate. Focused on software engineering methodologies, data structures, algorithms, database
+              architectures, and distributed systems.
+            </p>
+          </div>
+
+          <!-- Intermediate / Higher Secondary Card -->
+          <div class="edu-card">
+            <div class="edu-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+            </div>
+            <div class="edu-header">
+              <span class="edu-year">2021 - 2023</span>
+              <h3 class="edu-degree">Intermediate (MPC)</h3>
+              <p class="edu-institution">Sri Chaitanya Junior College</p>
+            </div>
+            <p class="edu-description">
+              Majored in Mathematics, Physics, Chemistry and Computer Science. Developed foundational algorithmic
+              problem-solving and programming fundamentals.
+            </p>
+            <div class="edu-highlights">
+              <span class="highlight-pill">Score: 92%</span>
+            </div>
+          </div>
+
+          <!-- Secondary Education (CBSE) Card -->
+          <div class="edu-card">
+            <div class="edu-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l9 4.9V17L12 22l-9-5V6.9L12 2z"></path>
+                <path d="M12 22V12"></path>
+                <path d="M21 7l-9 5-9-5"></path>
+              </svg>
+            </div>
+            <div class="edu-header">
+              <span class="edu-year">2020 - 2021</span>
+              <h3 class="edu-degree">Secondary School Certificate</h3>
+              <p class="edu-institution">Central Board of Secondary Education (CBSE)</p>
+            </div>
+            <p class="edu-description">
+              A well-rounded and focused student with a strong commitment to academics, sports, games, and various
+              cultural activities.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== PROJECTS SECTION ==================== -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+
+        <div class="section-heading text-center">
+          <span class="section-tag">Portfolio Showcase</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">A curated selection of applications and systems I have conceptualized,
+            architected, and deployed.</p>
+        </div>
+
+        <!-- Project Category Filters -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="ai-ml">AI & ML</button>
+          <button class="filter-btn" data-filter="embedded">Embedded Systems</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+
+          <!-- Project 1: LRC 2026 Hackathon Management Platform -->
+          <article class="project-card" data-category="fullstack">
+            <div class="project-banner banner-gradient-1">
+              <div class="project-badge">Full Stack & Cloud</div>
+              <div class="project-mockup-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">LRC 2026 — Lam Research Challenge Hackathon Platform</h3>
+              <p class="project-desc">
+                Architected an end-to-end competition platform backing 49+ relational tables for multi-role workflows:
+                T-Works Admins, Evaluators, Observers, and Jury Panels. Implemented real-time arena evaluation scoring,
+                automated team task assignments, jury submission aggregation, and DigitalOcean Spaces cloud file
+                storage.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-pill">React.js</span>
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">Express.js</span>
+                <span class="tech-pill">MySQL (49+ Tables)</span>
+                <span class="tech-pill">DigitalOcean Spaces</span>
+                <span class="tech-pill">REST APIs</span>
+                <span class="tech-pill">RBAC</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://lrc2026.tworks.in/" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-sm btn-primary" title="Live Hackathon Platform">
+                  <span>Live URL</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <a href="https://github.com/anuragreddy" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-sm btn-outline">
+                  <span>GitHub</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: DWIN DGUS Display & Industrial HMI Automation -->
+          <article class="project-card" data-category="embedded">
+            <div class="project-banner banner-gradient-3">
+              <div class="project-badge">Embedded Systems & IoT</div>
+              <div class="project-mockup-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">DWIN DGUS Smart Display & Industrial HMI Automation</h3>
+              <p class="project-desc">
+                Engineered industrial Human-Machine Interface (HMI) smart display solutions for automated commercial
+                food appliances (ITC Automated Roti Maker) using DWIN DGUS / T5L hardware. Developed a custom Python
+                automation toolchain for video-to-frame extraction, palette quantization, memory mapping, and ICL binary
+                compilation with UART serial sync.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-pill">Python Toolchain</span>
+                <span class="tech-pill">DWIN DGUS Displays</span>
+                <span class="tech-pill">T5L ASIC</span>
+                <span class="tech-pill">UART / Serial Protocol</span>
+                <span class="tech-pill">Touch Calibration</span>
+                <span class="tech-pill">C</span>
+              </div>
+              <div class="project-actions">
+                <a href="#experience" class="btn btn-sm btn-primary">
+                  <span>View Details</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </a>
+                <a href="https://github.com/anuragreddy" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-sm btn-outline">
+                  <span>GitHub</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Brain Stroke Prediction & Classification -->
+          <article class="project-card" data-category="ai-ml">
+            <div class="project-banner banner-gradient-4">
+              <div class="project-badge">AI & Deep Learning</div>
+              <div class="project-mockup-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+                  <path d="M12 2a10 10 0 0 1 10 10h-10V2z"></path>
+                  <path d="M12 12L2.5 7.5"></path>
+                  <path d="M12 12v9.5"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Brain Stroke Prediction & Classification via Deep Learning</h3>
+              <p class="project-desc">
+                Constructed an end-to-end medical image diagnostic pipeline deploying deep Convolutional Neural Networks
+                (CNNs) on brain CT scans to predict and classify strokes for early clinical intervention. Implemented
+                CLAHE contrast enhancement, skull-stripping artifact removal, and evaluated models with ROC-AUC curves
+                and confusion matrices.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">TensorFlow</span>
+                <span class="tech-pill">Keras</span>
+                <span class="tech-pill">OpenCV (CLAHE)</span>
+                <span class="tech-pill">Scikit-learn</span>
+                <span class="tech-pill">CNN</span>
+              </div>
+              <div class="project-actions">
+                <a href="#about" class="btn btn-sm btn-primary">
+                  <span>View Details</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </a>
+                <a href="https://github.com/anuragreddy" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-sm btn-outline">
+                  <span>GitHub</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Faculty Management System -->
+          <article class="project-card" data-category="fullstack">
+            <div class="project-banner banner-gradient-2">
+              <div class="project-badge">Full Stack & Database</div>
+              <div class="project-mockup-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Institutional Faculty Management System</h3>
+              <p class="project-desc">
+                Engineered an institutional faculty management platform designed to streamline academic scheduling,
+                workload allocation, faculty credentials, attendance records, and departmental resource administration
+                with role-based permissions and high-integrity relational schemas.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-pill">JavaScript (ES6+)</span>
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">Express.js</span>
+                <span class="tech-pill">MySQL / Relational DB</span>
+                <span class="tech-pill">REST APIs</span>
+                <span class="tech-pill">JWT Auth</span>
+              </div>
+              <div class="project-actions">
+                <a href="#contact" class="btn btn-sm btn-primary">
+                  <span>Project Overview</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </a>
+                <a href="https://github.com/anuragreddy" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-sm btn-outline">
+                  <span>GitHub</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+
+        <div class="section-heading text-center">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Have a project in mind, a question, or an opportunity? Feel free to drop a
+            message!</p>
+        </div>
+
+        <div class="contact-grid">
+
+          <!-- Contact Details / Info Cards -->
+          <div class="contact-info-wrapper">
+            <h3 class="contact-info-title">Contact Information</h3>
+            <p class="contact-info-subtitle">
+              I am currently available for full-time opportunities, high-impact contract roles, and open-source
+              collaborations.
+            </p>
+
+            <div class="contact-cards">
+
+              <div class="contact-card">
+                <div class="contact-card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="contact-card-content">
+                  <span class="contact-card-label">Email</span>
+                  <a href="mailto:anuragreddyadma@gmail.com" class="contact-card-value">anuragreddyadma@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="contact-card-content">
+                  <span class="contact-card-label">Mobile</span>
+                  <a href="tel:+919182236284" class="contact-card-value">+91 91822 36284</a>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="contact-card-content">
+                  <span class="contact-card-label">Location</span>
+                  <span class="contact-card-value">Hyderabad, India</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Social Links in Contact -->
+            <div class="contact-socials-box">
+              <span class="socials-box-title">Follow & Network</span>
+              <div class="social-links-list">
+                <a href="https://github.com/anuragreddy" target="_blank" rel="noopener noreferrer" class="social-link"
+                  aria-label="GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+                <a href="https://linkedin.com/in/adma-anurag-reddy" target="_blank" rel="noopener noreferrer"
+                  class="social-link" aria-label="LinkedIn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </a>
+                <a href="mailto:anuragreddyadma@gmail.com" class="social-link" aria-label="Email">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-card">
+            <h3 class="form-title">Send Me a Message</h3>
+            <p class="form-subtitle">Fill out the form below and I will get back to you within 24 hours.</p>
+
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-form"
+              novalidate>
+
+              <!-- Form Success & Error Alerts -->
+              <div id="form-alert" class="form-alert hidden" role="alert"></div>
+
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name <span class="required-star">*</span></label>
+                <div class="input-wrapper">
+                  <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Alex Morgan"
+                    autocomplete="name" required>
+                  <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <span class="field-error" id="name-error">Please enter your name.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address <span class="required-star">*</span></label>
+                <div class="input-wrapper">
+                  <input type="email" id="email" name="email" class="form-input" placeholder="e.g. alex@example.com"
+                    autocomplete="email" required>
+                  <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <span class="field-error" id="email-error">Please enter a valid email address.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject <span class="required-star">*</span></label>
+                <div class="input-wrapper">
+                  <input type="text" id="subject" name="subject" class="form-input"
+                    placeholder="e.g. Project Inquiry / Opportunity" required>
+                  <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg>
+                </div>
+                <span class="field-error" id="subject-error">Please specify a subject.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Your Message <span class="required-star">*</span></label>
+                <div class="input-wrapper">
+                  <textarea id="message" name="message" rows="5" class="form-textarea"
+                    placeholder="Describe your project, timeline, or question here..." required></textarea>
+                </div>
+                <span class="field-error" id="message-error">Please write a message (at least 10 characters).</span>
+              </div>
+
+              <button type="submit" id="submit-btn" class="btn btn-primary btn-block">
+                <span class="btn-text">Send Message</span>
+                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+
+              <div class="form-fallback-row">
+                <span>Or email directly:</span>
+                <a href="mailto:anuragreddyadma@gmail.com" class="fallback-email-link">anuragreddyadma@gmail.com</a>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo">
+            <span class="logo-bracket">&lt;</span><span class="logo-name">Anurag</span><span
+              class="logo-accent">.dev</span><span class="logo-bracket">/&gt;</span>
+          </a>
+          <p class="footer-tagline">
+            Building modern, performant, and elegant digital products. Always exploring new horizons in software
+            development.
+          </p>
+        </div>
+
+        <div class="footer-nav">
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social-section">
+          <h4 class="footer-title">Social Presence</h4>
+          <p class="footer-social-desc">Connect with me on social platforms and code repositories.</p>
+          <div class="social-links-list">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link"
+              aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link"
+              aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link"
+              aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                </path>
+              </svg>
+            </a>
+            <a href="mailto:anuragreddyadma@gmail.com" class="social-link" aria-label="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          &copy; <span id="current-year"></span> Anurag Reddy Adma. All rights reserved. Crafted with clean HTML, CSS &
+          JS.
+        </p>
+        <div class="footer-back-top">
+          <a href="#hero" class="back-to-top-link" aria-label="Back to top">
+            <span>Back to top</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button id="floating-top-btn" class="floating-top-btn" aria-label="Scroll back to top" title="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+
+</html>
