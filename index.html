@@ -1444,6 +1444,68 @@
     </svg>
   </button>
 
+  <!-- Floating AI Assistant Trigger Button -->
+  <button id="ai-chat-toggle" class="ai-chat-toggle-btn" aria-label="Ask Anurag AI" title="Ask Anurag AI">
+    <span class="ai-toggle-pulse"></span>
+    <span class="ai-toggle-icon">🤖</span>
+    <span class="ai-toggle-text">💬 Ask Anurag AI</span>
+  </button>
+
+  <!-- AI Assistant Chatbot Window -->
+  <div id="ai-chat-widget" class="ai-chat-widget closed" aria-hidden="true">
+    <div class="ai-chat-header">
+      <div class="ai-header-info">
+        <div class="ai-avatar-badge">
+          <span>🤖</span>
+          <span class="ai-online-dot"></span>
+        </div>
+        <div>
+          <h4 class="ai-chat-title">Anurag AI</h4>
+          <span class="ai-chat-badge">Portfolio Assistant</span>
+        </div>
+      </div>
+      <div class="ai-header-actions">
+        <button id="ai-clear-chat" class="ai-header-btn" title="Clear Conversation" aria-label="Clear Chat">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+        </button>
+        <button id="ai-close-chat" class="ai-header-btn" title="Close Chat" aria-label="Close Chat">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="ai-chat-body" id="ai-chat-messages">
+      <!-- Default welcome message -->
+      <div class="ai-msg bot-msg">
+        <div class="ai-msg-avatar">🤖</div>
+        <div class="ai-msg-bubble">
+          <p>Hi there! 👋 I'm <strong>Anurag AI</strong>, Anurag's virtual portfolio assistant. Ask me anything about his projects, technical skills, experience at T-Works, or how to get in touch!</p>
+        </div>
+      </div>
+
+      <!-- Suggestion chips -->
+      <div class="ai-chips-wrapper" id="ai-chips-container">
+        <span class="ai-chips-label">Quick questions:</span>
+        <div class="ai-chips-list">
+          <button class="ai-chip" data-query="What projects has Anurag built?">What projects has Anurag built?</button>
+          <button class="ai-chip" data-query="Tell me about his LRC project">Tell me about his LRC project</button>
+          <button class="ai-chip" data-query="What technologies does he know?">What technologies does he know?</button>
+          <button class="ai-chip" data-query="What did he do at T-Works?">What did he do at T-Works?</button>
+          <button class="ai-chip" data-query="How can I contact Anurag?">How can I contact Anurag?</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Input Form -->
+    <form id="ai-chat-form" class="ai-chat-footer">
+      <input type="text" id="ai-chat-input" class="ai-chat-input" placeholder="Ask me about Anurag..." autocomplete="off" required>
+      <button type="submit" id="ai-send-btn" class="ai-send-btn" aria-label="Send message">
+        <span>Send</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+      </button>
+    </form>
+  </div>
+
   <!-- JavaScript -->
   <script src="03_script.js"></script>
 </body>

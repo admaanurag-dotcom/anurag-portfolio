@@ -404,6 +404,246 @@ document.addEventListener('DOMContentLoaded', () => {
     yearElement.textContent = new Date().getFullYear();
   }
 
+  /* --------------------------------------------------------------------------
+     10. AI PORTFOLIO ASSISTANT (ANURAG AI)
+     -------------------------------------------------------------------------- */
+  const aiChatToggleBtn = document.getElementById('ai-chat-toggle');
+  const aiChatWidget = document.getElementById('ai-chat-widget');
+  const aiCloseBtn = document.getElementById('ai-close-chat');
+  const aiClearBtn = document.getElementById('ai-clear-chat');
+  const aiChatForm = document.getElementById('ai-chat-form');
+  const aiChatInput = document.getElementById('ai-chat-input');
+  const aiChatMessages = document.getElementById('ai-chat-messages');
+
+  if (aiChatToggleBtn && aiChatWidget) {
+    // Open/Close toggle
+    aiChatToggleBtn.addEventListener('click', () => {
+      const isClosed = aiChatWidget.classList.toggle('closed');
+      aiChatWidget.setAttribute('aria-hidden', isClosed ? 'true' : 'false');
+      if (!isClosed) {
+        setTimeout(() => aiChatInput && aiChatInput.focus(), 300);
+      }
+    });
+
+    if (aiCloseBtn) {
+      aiCloseBtn.addEventListener('click', () => {
+        aiChatWidget.classList.add('closed');
+        aiChatWidget.setAttribute('aria-hidden', 'true');
+      });
+    }
+
+    if (aiClearBtn) {
+      aiClearBtn.addEventListener('click', () => {
+        aiChatMessages.innerHTML = `
+          <div class="ai-msg bot-msg">
+            <div class="ai-msg-avatar">🤖</div>
+            <div class="ai-msg-bubble">
+              <p>Chat cleared! 👋 Feel free to ask me another question about Anurag's work, experience, or skills.</p>
+            </div>
+          </div>
+          <div class="ai-chips-wrapper" id="ai-chips-container">
+            <span class="ai-chips-label">Quick questions:</span>
+            <div class="ai-chips-list">
+              <button class="ai-chip" data-query="What projects has Anurag built?">What projects has Anurag built?</button>
+              <button class="ai-chip" data-query="Tell me about his LRC project">Tell me about his LRC project</button>
+              <button class="ai-chip" data-query="What technologies does he know?">What technologies does he know?</button>
+              <button class="ai-chip" data-query="What did he do at T-Works?">What did he do at T-Works?</button>
+              <button class="ai-chip" data-query="How can I contact Anurag?">How can I contact Anurag?</button>
+            </div>
+          </div>
+        `;
+        attachChipListeners();
+      });
+    }
+
+    function appendUserMessage(text) {
+      const userMsgDiv = document.createElement('div');
+      userMsgDiv.className = 'ai-msg user-msg';
+      userMsgDiv.innerHTML = `
+        <div class="ai-msg-avatar">👤</div>
+        <div class="ai-msg-bubble"><p>${escapeHtml(text)}</p></div>
+      `;
+      aiChatMessages.appendChild(userMsgDiv);
+      aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+    }
+
+    function showTypingIndicator() {
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'ai-msg bot-msg ai-typing-msg';
+      typingDiv.id = 'ai-typing-indicator';
+      typingDiv.innerHTML = `
+        <div class="ai-msg-avatar">🤖</div>
+        <div class="ai-msg-bubble ai-typing-indicator">
+          <span></span><span></span><span></span>
+        </div>
+      `;
+      aiChatMessages.appendChild(typingDiv);
+      aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+    }
+
+    function removeTypingIndicator() {
+      const typingDiv = document.getElementById('ai-typing-indicator');
+      if (typingDiv) typingDiv.remove();
+    }
+
+    function appendBotMessage(htmlContent) {
+      removeTypingIndicator();
+      const botMsgDiv = document.createElement('div');
+      botMsgDiv.className = 'ai-msg bot-msg';
+      botMsgDiv.innerHTML = `
+        <div class="ai-msg-avatar">🤖</div>
+        <div class="ai-msg-bubble">${htmlContent}</div>
+      `;
+      aiChatMessages.appendChild(botMsgDiv);
+      aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+    }
+
+    function escapeHtml(string) {
+      const div = document.createElement('div');
+      div.textContent = string;
+      return div.innerHTML;
+    }
+
+    // Knowledge Engine
+    function generateAssistantResponse(query) {
+      const q = query.toLowerCase().trim();
+
+      // LRC Project
+      if (q.includes('lrc') || q.includes('lam research') || q.includes('hackathon')) {
+        return `<p>🏆 <strong>LRC 2026 — Lam Research Challenge Hackathon Platform</strong></p>
+                <p>Anurag architected this end-to-end hackathon management system powering <strong>49+ relational tables</strong>. It facilitates multi-role workflows for Admins, Evaluators, Observers, and Juries with real-time arena scoring and DigitalOcean Spaces storage.</p>
+                <p>🔗 <a href="https://lrc2026.tworks.in/" target="_blank">Live Demo: lrc2026.tworks.in</a> &bull; <a href="#projects" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">View in Projects</a></p>`;
+      }
+
+      // T-Works Internship / Work Experience
+      if (q.includes('t-works') || q.includes('intern') || q.includes('experience') || q.includes('job') || q.includes('work')) {
+        return `<p>🏢 <strong>Automation Intern at T-Works (Nov 2025 – Present)</strong></p>
+                <p>At T-Works (India's premier prototyping center in Hyderabad), Anurag:</p>
+                <p>• Built the <strong>LRC 2026 platform</strong> for hackathon tracking.<br>
+                • Developed Python toolchains for <strong>DWIN DGUS smart displays</strong> for industrial food appliances (ITC Automated Roti Maker).<br>
+                • Engineered UART serial sync and automated graphic compilation.</p>
+                <p>🔗 <a href="#experience" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">Jump to Experience section</a></p>`;
+      }
+
+      // Projects (General)
+      if (q.includes('project') || q.includes('built') || q.includes('portfolio') || q.includes('apps') || q.includes('live')) {
+        return `<p>🚀 <strong>Featured Projects Built by Anurag:</strong></p>
+                <p>1. <strong>LRC 2026</strong> (Full Stack) — Enterprise hackathon evaluation engine.<br>
+                2. <strong>DWIN Roti Maker</strong> (Embedded/IoT) — Industrial HMI touchscreen toolchain.<br>
+                3. <strong>Retinal Vessel Segmentation</strong> (AI/ML) — Deep learning CNN model with 0.982 AUC.<br>
+                4. <strong>Faculty Management System</strong> (Full Stack) — Node.js/MySQL platform.<br>
+                5. <strong>Flappy Bird & Snake</strong> (Games) — Interactive browser games.</p>
+                <p>🔗 <a href="#projects" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">Explore all in Projects section</a></p>`;
+      }
+
+      // DWIN / Embedded / Roti Maker
+      if (q.includes('dwin') || q.includes('roti') || q.includes('embedded') || q.includes('hmi') || q.includes('uart') || q.includes('t5l')) {
+        return `<p>⚙️ <strong>DWIN DGUS Smart Display & Industrial HMI Automation</strong></p>
+                <p>Engineered smart display interfaces for commercial appliances (ITC Automated Roti Maker). Anurag built custom Python pipelines for video extraction, quantization, and ICL binary compilation with UART serial sync.</p>
+                <p>🔗 <a href="#projects" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">View Project Card</a></p>`;
+      }
+
+      // AI / ML / Retinal / Computer Vision
+      if (q.includes('ai') || q.includes('ml') || q.includes('retinal') || q.includes('vision') || q.includes('deep learning') || q.includes('cnn') || q.includes('model')) {
+        return `<p>🤖 <strong>Deep Learning & AI Capabilities</strong></p>
+                <p>Anurag built a <strong>Deep Learning Retinal Blood Vessel Segmentation</strong> diagnostic system on DRIVE and STARE datasets, achieving <strong>0.982 AUC</strong> and <strong>95.4% sensitivity</strong> for automated diabetic retinopathy diagnosis.</p>
+                <p>Skilled in Python, TensorFlow, Scikit-learn, CNN architectures, and data pipelines.</p>`;
+      }
+
+      // Technologies / Skills
+      if (q.includes('tech') || q.includes('skill') || q.includes('stack') || q.includes('language') || q.includes('python') || q.includes('javascript') || q.includes('react') || q.includes('know')) {
+        return `<p>💻 <strong>Anurag's Technical Repertoire:</strong></p>
+                <p>• <strong>Languages:</strong> Python, JavaScript (ES6+), TypeScript, C, C++, SQL, HTML5/CSS3<br>
+                • <strong>Frontend & Web:</strong> React, Vanilla JS, Responsive Design, CSS Animations<br>
+                • <strong>Backend & Cloud:</strong> Node.js, Express, MySQL, PostgreSQL, REST APIs, DigitalOcean<br>
+                • <strong>AI & Data:</strong> TensorFlow, Scikit-learn, CNNs, OpenCV, Pandas/NumPy<br>
+                • <strong>Embedded Systems:</strong> DWIN DGUS / T5L, UART, HMI Prototyping, Git</p>
+                <p>🔗 <a href="#skills" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">See full Skills section</a></p>`;
+      }
+
+      // Education
+      if (q.includes('education') || q.includes('college') || q.includes('university') || q.includes('degree') || q.includes('b.tech') || q.includes('academic') || q.includes('study')) {
+        return `<p>🎓 <strong>Academic Foundation:</strong></p>
+                <p>• <strong>B.Tech in Computer Science & Engineering (AI & ML)</strong> — Specializing in machine learning, distributed systems, and modern software architectures.<br>
+                • Active member of tech innovation hubs and hackathon teams.</p>
+                <p>🔗 <a href="#education" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">View Education Section</a></p>`;
+      }
+
+      // Contact / Hire / Email / Location
+      if (q.includes('contact') || q.includes('hire') || q.includes('email') || q.includes('phone') || q.includes('mobile') || q.includes('reach') || q.includes('location') || q.includes('linkedin') || q.includes('github') || q.includes('resume') || q.includes('cv')) {
+        return `<p>📬 <strong>Get in Touch with Anurag:</strong></p>
+                <p>• <strong>Email:</strong> <a href="mailto:anuragreddyadma@gmail.com">anuragreddyadma@gmail.com</a><br>
+                • <strong>Phone:</strong> <a href="tel:+919182236284">+91 91822 36284</a><br>
+                • <strong>Location:</strong> Hyderabad, India<br>
+                • <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/anurag-reddy-adma-48933b282" target="_blank">linkedin.com/in/anurag-reddy-adma</a><br>
+                • <strong>GitHub:</strong> <a href="https://github.com/admaanurag-dotcom" target="_blank">github.com/admaanurag-dotcom</a><br>
+                • <strong>Resume:</strong> <a href="06_Anurag_Reddy_Adma_Resume.pdf" download="06_Anurag_Reddy_Adma_Resume.pdf" target="_blank">Download Resume PDF</a></p>
+                <p>🔗 <a href="#contact" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">Send a message directly</a></p>`;
+      }
+
+      // Who is Anurag / About
+      if (q.includes('who') || q.includes('about') || q.includes('anurag') || q.includes('summary') || q.includes('intro')) {
+        return `<p>👨‍💻 <strong>About Anurag Reddy Adma:</strong></p>
+                <p>Anurag is an innovative Software Engineer and AI/ML Specialist with industry experience at <strong>T-Works</strong>. He blends full-stack web engineering, deep learning computer vision models, and industrial embedded systems (HMI/DWIN) to craft reliable, high-performance software.</p>
+                <p>He is currently <strong>open for full-time software engineering roles and collaborations</strong>!</p>
+                <p>🔗 <a href="#about" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">Read full Bio</a></p>`;
+      }
+
+      // Greetings
+      if (q.includes('hi') || q.includes('hello') || q.includes('hey') || q.includes('greetings') || q.includes('howdy') || q === 'yo') {
+        return `<p>Hello! 👋 How can I help you learn more about Anurag today? You can ask about:</p>
+                <p>• His <strong>featured projects</strong> (like LRC 2026 & DWIN HMI)<br>
+                • His <strong>internship at T-Works</strong><br>
+                • His <strong>tech stack & skills</strong><br>
+                • How to <strong>contact or hire him</strong></p>`;
+      }
+
+      // Fallback
+      return `<p>I'd love to help with that! Here are a few questions you can ask me:</p>
+              <p>• <em>"What projects has Anurag built?"</em><br>
+              • <em>"Tell me about his LRC project"</em><br>
+              • <em>"What did he do at T-Works?"</em><br>
+              • <em>"What technologies does he know?"</em><br>
+              • <em>"How can I contact Anurag?"</em></p>`;
+    }
+
+    function processQuery(queryText) {
+      if (!queryText.trim()) return;
+      appendUserMessage(queryText);
+      showTypingIndicator();
+
+      const responseDelay = Math.min(800, Math.max(350, queryText.length * 15));
+
+      setTimeout(() => {
+        const responseHtml = generateAssistantResponse(queryText);
+        appendBotMessage(responseHtml);
+      }, responseDelay);
+    }
+
+    if (aiChatForm) {
+      aiChatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const query = aiChatInput.value;
+        aiChatInput.value = '';
+        processQuery(query);
+      });
+    }
+
+    function attachChipListeners() {
+      const chips = document.querySelectorAll('.ai-chip');
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          const query = chip.getAttribute('data-query');
+          if (query) {
+            processQuery(query);
+          }
+        });
+      });
+    }
+
+    attachChipListeners();
+  }
+
 });
 
 // Add keyframe animation for the spinner dynamically
@@ -415,3 +655,4 @@ styleSheet.textContent = `
   }
 `;
 document.head.appendChild(styleSheet);
+
