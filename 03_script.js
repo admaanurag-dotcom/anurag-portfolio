@@ -508,69 +508,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function generateAssistantResponse(query) {
       const q = query.toLowerCase().trim();
 
-      // LRC Project
-      if (q.includes('lrc') || q.includes('lam research') || q.includes('hackathon')) {
-        return `<p>🏆 <strong>LRC 2026 — Lam Research Challenge Hackathon Platform</strong></p>
-                <p>Anurag architected this end-to-end hackathon management system powering <strong>49+ relational tables</strong>. It facilitates multi-role workflows for Admins, Evaluators, Observers, and Juries with real-time arena scoring and DigitalOcean Spaces storage.</p>
-                <p>🔗 <a href="https://lrc2026.tworks.in/" target="_blank">Live Demo: lrc2026.tworks.in</a> &bull; <a href="#projects" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">View in Projects</a></p>`;
+      // Greetings (exact match or greeting words)
+      if (/\b(hi|hello|hey|greetings|howdy|good\s+(morning|afternoon|evening)|yo)\b/i.test(q)) {
+        return `<p>Hello! 👋 How can I help you learn more about Anurag today? You can ask about:</p>
+                <p>• His <strong>featured projects</strong> (like LRC 2026 & DWIN HMI)<br>
+                • His <strong>internship at T-Works</strong><br>
+                • His <strong>tech stack & skills</strong><br>
+                • How to <strong>contact or hire him</strong></p>`;
       }
 
-      // T-Works Internship / Work Experience
-      if (q.includes('t-works') || q.includes('intern') || q.includes('experience') || q.includes('job') || q.includes('work')) {
-        return `<p>🏢 <strong>Automation Intern at T-Works (Nov 2025 – Present)</strong></p>
-                <p>At T-Works (India's premier prototyping center in Hyderabad), Anurag:</p>
-                <p>• Built the <strong>LRC 2026 platform</strong> for hackathon tracking.<br>
-                • Developed Python toolchains for <strong>DWIN DGUS smart displays</strong> for industrial food appliances (ITC Automated Roti Maker).<br>
-                • Engineered UART serial sync and automated graphic compilation.</p>
-                <p>🔗 <a href="#experience" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">Jump to Experience section</a></p>`;
-      }
-
-      // Projects (General)
-      if (q.includes('project') || q.includes('built') || q.includes('portfolio') || q.includes('apps') || q.includes('live')) {
-        return `<p>🚀 <strong>Featured Projects Built by Anurag:</strong></p>
-                <p>1. <strong>LRC 2026</strong> (Full Stack) — Enterprise hackathon evaluation engine.<br>
-                2. <strong>DWIN Roti Maker</strong> (Embedded/IoT) — Industrial HMI touchscreen toolchain.<br>
-                3. <strong>Retinal Vessel Segmentation</strong> (AI/ML) — Deep learning CNN model with 0.982 AUC.<br>
-                4. <strong>Faculty Management System</strong> (Full Stack) — Node.js/MySQL platform.<br>
-                5. <strong>Flappy Bird & Snake</strong> (Games) — Interactive browser games.</p>
-                <p>🔗 <a href="#projects" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">Explore all in Projects section</a></p>`;
-      }
-
-      // DWIN / Embedded / Roti Maker
-      if (q.includes('dwin') || q.includes('roti') || q.includes('embedded') || q.includes('hmi') || q.includes('uart') || q.includes('t5l')) {
-        return `<p>⚙️ <strong>DWIN DGUS Smart Display & Industrial HMI Automation</strong></p>
-                <p>Engineered smart display interfaces for commercial appliances (ITC Automated Roti Maker). Anurag built custom Python pipelines for video extraction, quantization, and ICL binary compilation with UART serial sync.</p>
-                <p>🔗 <a href="#projects" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">View Project Card</a></p>`;
-      }
-
-      // AI / ML / Retinal / Computer Vision
-      if (q.includes('ai') || q.includes('ml') || q.includes('retinal') || q.includes('vision') || q.includes('deep learning') || q.includes('cnn') || q.includes('model')) {
-        return `<p>🤖 <strong>Deep Learning & AI Capabilities</strong></p>
-                <p>Anurag built a <strong>Deep Learning Retinal Blood Vessel Segmentation</strong> diagnostic system on DRIVE and STARE datasets, achieving <strong>0.982 AUC</strong> and <strong>95.4% sensitivity</strong> for automated diabetic retinopathy diagnosis.</p>
-                <p>Skilled in Python, TensorFlow, Scikit-learn, CNN architectures, and data pipelines.</p>`;
-      }
-
-      // Technologies / Skills
-      if (q.includes('tech') || q.includes('skill') || q.includes('stack') || q.includes('language') || q.includes('python') || q.includes('javascript') || q.includes('react') || q.includes('know')) {
-        return `<p>💻 <strong>Anurag's Technical Repertoire:</strong></p>
-                <p>• <strong>Languages:</strong> Python, JavaScript (ES6+), TypeScript, C, C++, SQL, HTML5/CSS3<br>
-                • <strong>Frontend & Web:</strong> React, Vanilla JS, Responsive Design, CSS Animations<br>
-                • <strong>Backend & Cloud:</strong> Node.js, Express, MySQL, PostgreSQL, REST APIs, DigitalOcean<br>
-                • <strong>AI & Data:</strong> TensorFlow, Scikit-learn, CNNs, OpenCV, Pandas/NumPy<br>
-                • <strong>Embedded Systems:</strong> DWIN DGUS / T5L, UART, HMI Prototyping, Git</p>
-                <p>🔗 <a href="#skills" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">See full Skills section</a></p>`;
-      }
-
-      // Education
-      if (q.includes('education') || q.includes('college') || q.includes('university') || q.includes('degree') || q.includes('b.tech') || q.includes('academic') || q.includes('study')) {
-        return `<p>🎓 <strong>Academic Foundation:</strong></p>
-                <p>• <strong>B.Tech in Computer Science & Engineering (AI & ML)</strong> — Specializing in machine learning, distributed systems, and modern software architectures.<br>
-                • Active member of tech innovation hubs and hackathon teams.</p>
-                <p>🔗 <a href="#education" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">View Education Section</a></p>`;
-      }
-
-      // Contact / Hire / Email / Location
-      if (q.includes('contact') || q.includes('hire') || q.includes('email') || q.includes('phone') || q.includes('mobile') || q.includes('reach') || q.includes('location') || q.includes('linkedin') || q.includes('github') || q.includes('resume') || q.includes('cv')) {
+      // Contact / Email / Phone / Location / Resume / CV
+      if (/\b(contact|email|phone|mobile|call|reach|location|address|city|linkedin|github|resume|cv|hire|hiring)\b/i.test(q)) {
         return `<p>📬 <strong>Get in Touch with Anurag:</strong></p>
                 <p>• <strong>Email:</strong> <a href="mailto:anuragreddyadma@gmail.com">anuragreddyadma@gmail.com</a><br>
                 • <strong>Phone:</strong> <a href="tel:+919182236284">+91 91822 36284</a><br>
@@ -581,21 +529,73 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>🔗 <a href="#contact" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">Send a message directly</a></p>`;
       }
 
-      // Who is Anurag / About
-      if (q.includes('who') || q.includes('about') || q.includes('anurag') || q.includes('summary') || q.includes('intro')) {
+      // LRC Project
+      if (/\b(lrc|lam\s*research|hackathon)\b/i.test(q)) {
+        return `<p>🏆 <strong>LRC 2026 — Lam Research Challenge Hackathon Platform</strong></p>
+                <p>Anurag architected this end-to-end hackathon management system powering <strong>49+ relational tables</strong>. It facilitates multi-role workflows for Admins, Evaluators, Observers, and Juries with real-time arena scoring and DigitalOcean Spaces storage.</p>
+                <p>🔗 <a href="https://lrc2026.tworks.in/" target="_blank">Live Demo: lrc2026.tworks.in</a> &bull; <a href="#projects" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">View in Projects</a></p>`;
+      }
+
+      // DWIN / Embedded / Roti Maker
+      if (/\b(dwin|roti|embedded|hmi|dgus|uart|t5l|iot)\b/i.test(q)) {
+        return `<p>⚙️ <strong>DWIN DGUS Smart Display & Industrial HMI Automation</strong></p>
+                <p>Engineered smart display interfaces for commercial appliances (ITC Automated Roti Maker). Anurag built custom Python pipelines for video extraction, quantization, and ICL binary compilation with UART serial sync.</p>
+                <p>🔗 <a href="#projects" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">View Project Card</a></p>`;
+      }
+
+      // AI / ML / Retinal / Computer Vision
+      if (/\b(retinal|vessel|segmentation|deep\s*learning|computer\s*vision|cnn|tensorflow|ai\s*model|machine\s*learning|ai|ml)\b/i.test(q)) {
+        return `<p>🤖 <strong>Deep Learning & AI Capabilities</strong></p>
+                <p>Anurag built a <strong>Deep Learning Retinal Blood Vessel Segmentation</strong> diagnostic system on DRIVE and STARE datasets, achieving <strong>0.982 AUC</strong> and <strong>95.4% sensitivity</strong> for automated diabetic retinopathy diagnosis.</p>
+                <p>Skilled in Python, TensorFlow, Scikit-learn, CNN architectures, and data pipelines.</p>`;
+      }
+
+      // T-Works Internship / Work Experience
+      if (/\b(t-works|tworks|intern|internship|experience|work|career)\b/i.test(q)) {
+        return `<p>🏢 <strong>Automation Intern at T-Works (Nov 2025 – Present)</strong></p>
+                <p>At T-Works (India's premier prototyping center in Hyderabad), Anurag:</p>
+                <p>• Built the <strong>LRC 2026 platform</strong> for hackathon tracking.<br>
+                • Developed Python toolchains for <strong>DWIN DGUS smart displays</strong> for industrial food appliances (ITC Automated Roti Maker).<br>
+                • Engineered UART serial sync and automated graphic compilation.</p>
+                <p>🔗 <a href="#experience" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">Jump to Experience section</a></p>`;
+      }
+
+      // Projects (General / List / Games)
+      if (/\b(project|projects|built|portfolio|apps|app|application|applications|flappy|snake|game|games)\b/i.test(q)) {
+        return `<p>🚀 <strong>Featured Projects Built by Anurag:</strong></p>
+                <p>1. <strong>LRC 2026</strong> (Full Stack) — Enterprise hackathon evaluation engine.<br>
+                2. <strong>DWIN Roti Maker</strong> (Embedded/IoT) — Industrial HMI touchscreen toolchain.<br>
+                3. <strong>Retinal Vessel Segmentation</strong> (AI/ML) — Deep learning CNN model with 0.982 AUC.<br>
+                4. <strong>Faculty Management System</strong> (Full Stack) — Node.js/MySQL platform.<br>
+                5. <strong>Flappy Bird & Snake</strong> (Games) — Interactive browser games.</p>
+                <p>🔗 <a href="#projects" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">Explore all in Projects section</a></p>`;
+      }
+
+      // Technologies / Skills
+      if (/\b(tech|technology|technologies|skill|skills|stack|language|languages|python|javascript|typescript|react|node|express|mysql|postgres|sql|html|css|git)\b/i.test(q)) {
+        return `<p>💻 <strong>Anurag's Technical Repertoire:</strong></p>
+                <p>• <strong>Languages:</strong> Python, JavaScript (ES6+), TypeScript, C, C++, SQL, HTML5/CSS3<br>
+                • <strong>Frontend & Web:</strong> React, Vanilla JS, Responsive Design, CSS Animations<br>
+                • <strong>Backend & Cloud:</strong> Node.js, Express, MySQL, PostgreSQL, REST APIs, DigitalOcean<br>
+                • <strong>AI & Data:</strong> TensorFlow, Scikit-learn, CNNs, OpenCV, Pandas/NumPy<br>
+                • <strong>Embedded Systems:</strong> DWIN DGUS / T5L, UART, HMI Prototyping, Git</p>
+                <p>🔗 <a href="#skills" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">See full Skills section</a></p>`;
+      }
+
+      // Education
+      if (/\b(education|college|university|degree|b\.?tech|academic|study|qualification|graduat)\b/i.test(q)) {
+        return `<p>🎓 <strong>Academic Foundation:</strong></p>
+                <p>• <strong>B.Tech in Computer Science & Engineering (AI & ML)</strong> — Specializing in machine learning, distributed systems, and modern software architectures.<br>
+                • Active member of tech innovation hubs and hackathon teams.</p>
+                <p>🔗 <a href="#education" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">View Education Section</a></p>`;
+      }
+
+      // Who is Anurag / About / Bio
+      if (/\b(who|about|anurag|bio|summary|background|profile|intro|details)\b/i.test(q)) {
         return `<p>👨‍💻 <strong>About Anurag Reddy Adma:</strong></p>
                 <p>Anurag is an innovative Software Engineer and AI/ML Specialist with industry experience at <strong>T-Works</strong>. He blends full-stack web engineering, deep learning computer vision models, and industrial embedded systems (HMI/DWIN) to craft reliable, high-performance software.</p>
                 <p>He is currently <strong>open for full-time software engineering roles and collaborations</strong>!</p>
                 <p>🔗 <a href="#about" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">Read full Bio</a></p>`;
-      }
-
-      // Greetings
-      if (q.includes('hi') || q.includes('hello') || q.includes('hey') || q.includes('greetings') || q.includes('howdy') || q === 'yo') {
-        return `<p>Hello! 👋 How can I help you learn more about Anurag today? You can ask about:</p>
-                <p>• His <strong>featured projects</strong> (like LRC 2026 & DWIN HMI)<br>
-                • His <strong>internship at T-Works</strong><br>
-                • His <strong>tech stack & skills</strong><br>
-                • How to <strong>contact or hire him</strong></p>`;
       }
 
       // Fallback
