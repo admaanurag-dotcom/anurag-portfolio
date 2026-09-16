@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Real sending state with API submission and email client fallback
+      // Submit to backend email API
       const originalBtnText = submitBtn.innerHTML;
       submitBtn.disabled = true;
       submitBtn.innerHTML = `
@@ -309,45 +309,38 @@ document.addEventListener('DOMContentLoaded', () => {
         </svg>
       `;
 
-      function triggerDirectMailto() {
-        const nameVal = nameInput ? nameInput.value.trim() : '';
-        const emailVal = emailInput ? emailInput.value.trim() : '';
-        const subjectVal = encodeURIComponent(subjectInput ? subjectInput.value.trim() : 'Portfolio Contact Inquiry');
-        const bodyContent = encodeURIComponent(`Hi Anurag,\n\nName: ${nameVal}\nEmail: ${emailVal}\n\nMessage:\n${messageInput ? messageInput.value.trim() : ''}`);
+      const payload = {
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        subject: subjectInput.value.trim(),
+        message: messageInput.value.trim()
+      };
 
-        const mailtoLink = `mailto:anuragreddyadma@gmail.com?subject=${subjectVal}&body=${bodyContent}`;
-        showFormAlert('Launching your email client to send message to anuragreddyadma@gmail.com...', 'success');
-
-        setTimeout(() => {
-          window.location.href = mailtoLink;
-        }, 300);
-      }
-
-      const formData = new FormData(contactForm);
-
-      fetch('https://api.web3forms.com/submit', {
+      fetch('/api/contact', {
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
       })
         .then(async (response) => {
-          let result = {};
+          let data = {};
           try {
-            result = await response.json();
+            data = await response.json();
           } catch (err) { }
 
-          if (response.ok && result.success) {
-            showFormAlert('Thank you! Your message has been sent successfully to anuragreddyadma@gmail.com.', 'success');
+          if (response.ok && data.success) {
+            showFormAlert('Thank you! Your message has been sent successfully to Anurag.', 'success');
             contactForm.reset();
           } else {
-            // If public endpoint needs key or returns, fall back seamlessly to prefilled email client
-            triggerDirectMailto();
-            contactForm.reset();
+            const errorMsg = data.error || 'Failed to send message. Please try again or email directly to anuragreddyadma@gmail.com.';
+            showFormAlert(errorMsg, 'error');
           }
         })
         .catch((error) => {
-          // Offline or network error fallback
-          triggerDirectMailto();
-          contactForm.reset();
+          console.error('Submission network error:', error);
+          showFormAlert('Unable to connect to the email server. Please check your connection or email directly to anuragreddyadma@gmail.com.', 'error');
         })
         .finally(() => {
           submitBtn.disabled = false;
