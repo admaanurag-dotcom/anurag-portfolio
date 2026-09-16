@@ -577,7 +577,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 • <strong>Location:</strong> Hyderabad, India<br>
                 • <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/anurag-reddy-adma-48933b282" target="_blank">linkedin.com/in/anurag-reddy-adma</a><br>
                 • <strong>GitHub:</strong> <a href="https://github.com/admaanurag-dotcom" target="_blank">github.com/admaanurag-dotcom</a><br>
-                • <strong>Resume:</strong> <a href="06_Anurag_Reddy_Adma_Resume.pdf" download="06_Anurag_Reddy_Adma_Resume.pdf" target="_blank">Download Resume PDF</a></p>
+                • <strong>Resume / CV:</strong> <a href="06_Anurag_Reddy_Adma_Resume.pdf" target="_blank">👁 View Resume</a> &bull; <a href="06_Anurag_Reddy_Adma_Resume.pdf" download="06_Anurag_Reddy_Adma_Resume.pdf">↓ Download PDF</a></p>
                 <p>🔗 <a href="#contact" onclick="document.getElementById('ai-chat-widget').classList.add('closed')">Send a message directly</a></p>`;
       }
 
