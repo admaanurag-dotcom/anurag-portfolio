@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggleBtn.addEventListener('click', () => {
       const currentTheme = htmlRoot.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
+
       htmlRoot.setAttribute('data-theme', newTheme);
       localStorage.setItem('portfolio-theme', newTheme);
     });
@@ -314,10 +314,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const emailVal = emailInput ? emailInput.value.trim() : '';
         const subjectVal = encodeURIComponent(subjectInput ? subjectInput.value.trim() : 'Portfolio Contact Inquiry');
         const bodyContent = encodeURIComponent(`Hi Anurag,\n\nName: ${nameVal}\nEmail: ${emailVal}\n\nMessage:\n${messageInput ? messageInput.value.trim() : ''}`);
-        
+
         const mailtoLink = `mailto:anuragreddyadma@gmail.com?subject=${subjectVal}&body=${bodyContent}`;
         showFormAlert('Launching your email client to send message to anuragreddyadma@gmail.com...', 'success');
-        
+
         setTimeout(() => {
           window.location.href = mailtoLink;
         }, 300);
@@ -329,38 +329,38 @@ document.addEventListener('DOMContentLoaded', () => {
         method: 'POST',
         body: formData
       })
-      .then(async (response) => {
-        let result = {};
-        try {
-          result = await response.json();
-        } catch (err) {}
+        .then(async (response) => {
+          let result = {};
+          try {
+            result = await response.json();
+          } catch (err) { }
 
-        if (response.ok && result.success) {
-          showFormAlert('Thank you! Your message has been sent successfully to anuragreddyadma@gmail.com.', 'success');
-          contactForm.reset();
-        } else {
-          // If public endpoint needs key or returns, fall back seamlessly to prefilled email client
+          if (response.ok && result.success) {
+            showFormAlert('Thank you! Your message has been sent successfully to anuragreddyadma@gmail.com.', 'success');
+            contactForm.reset();
+          } else {
+            // If public endpoint needs key or returns, fall back seamlessly to prefilled email client
+            triggerDirectMailto();
+            contactForm.reset();
+          }
+        })
+        .catch((error) => {
+          // Offline or network error fallback
           triggerDirectMailto();
           contactForm.reset();
-        }
-      })
-      .catch((error) => {
-        // Offline or network error fallback
-        triggerDirectMailto();
-        contactForm.reset();
-      })
-      .finally(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
 
-        // Remove error states if any remained
-        document.querySelectorAll('.form-group').forEach(group => group.classList.remove('has-error'));
+          // Remove error states if any remained
+          document.querySelectorAll('.form-group').forEach(group => group.classList.remove('has-error'));
 
-        // Hide alert message after 8 seconds
-        setTimeout(() => {
-          if (formAlert) formAlert.classList.add('hidden');
-        }, 8000);
-      });
+          // Hide alert message after 8 seconds
+          setTimeout(() => {
+            if (formAlert) formAlert.classList.add('hidden');
+          }, 8000);
+        });
     });
   }
 
